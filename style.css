@@ -21,8 +21,8 @@
 
 .box {
   padding: 10px;
-  width: 50%; /* Adjust width to 50% for two columns on mobile */
-  flex-basis: 50%;
+  width: 25%; /* Adjust width to 25% for four columns on PC */
+  flex-basis: 25%;
   height: 400px;
   border-radius: 5px;
   overflow: hidden;
@@ -32,7 +32,7 @@
 /* Media query for mobile devices */
 @media only screen and (max-width: 768px) {
   .box {
-    width: 100%;  /* Set width to 100% for single column on mobile */
+    width: 50%;  /* Set width to 50% for two columns on mobile */
   }
 }
 
