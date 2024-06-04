@@ -9,41 +9,15 @@ const SEARCHAPI ="https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5e
 
 const movieBox= document.querySelector("#movie-box")
 
-const getMovies = async (api) => {
-  // Fetch data from the API
-  const response = await fetch(api);
-
-  // Check for successful response
-  if (!response.ok) {
-    throw new Error(`Failed to fetch data. Status: ${response.status}`);
-  }
-
-  // Parse JSON data
-  const data = await response.json();
-
-  // Handle potential errors during data parsing (optional)
-  try {
-    const movies = data.results; // Assuming results property contains movie data
-
-    // Create the movie container element (modify selector as needed)
-    const movieContainer = document.querySelector('#your-movie-container-id');
-
-    // Clear existing content for a fresh display (optional)
-    movieContainer.innerHTML = ''; 
-
-    // Create an informative heading
-    const heading = document.createElement('h1');
-    heading.textContent = 'Movies'; 
-
-    
-    movieContainer.appendChild(heading);
-    showMovies(movies);
-  } catch (error) {
-    console.error('Error parsing movie data:', error);
-    
-  }
-};
-
+const getMovies= async(api) => {//coz fetching a 3rd party url
+    const response= await fetch(api)
+    if (!response.ok) {
+        throw new Error(`Failed to fetch data. Status: ${response.status}`);
+    }
+    const data = await response.json()
+    // console.log(data); data dega
+    showMovies(data.results)
+}
 getMovies(APIURL)
 
 const showMovies = (data) => {
