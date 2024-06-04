@@ -29,10 +29,19 @@
   position: relative;
 }
 
-/* Media query for mobile devices */
+/* Media query for tablets and mobile devices */
 @media only screen and (max-width: 768px) {
   .box {
     width: 50%;  /* Set width to 50% for two columns on mobile */
+    flex-basis: 50%;
+  }
+}
+
+/* Media query for very small devices (optional) */
+@media only screen and (max-width: 480px) {
+  .box {
+    width: 100%;  /* Set width to 100% for one column on very small devices */
+    flex-basis: 100%;
   }
 }
 
